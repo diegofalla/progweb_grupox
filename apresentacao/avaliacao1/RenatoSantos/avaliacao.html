@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresetação do Grupo</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box header">Header - Imagem L<br>Cor de Funto Preto<br>LINK COM TABELA DE PRODUTOS COM TRÊS ITENS<br></div>
+        <div class="box sidebar">
+            <nav>
+                <h1>Curso Web Frontend</h1>
+                <a href wm-nav="integrantes/profrenato.html">Professor</a> <br>
+                <a href wm-nav="integrantes/alunoteste1.html">HTML Introduction</a> <br>
+                <a href wm-nav="integrantes/alunoteste4.html">HTML Elements</a> <br>
+                <a href wm-nav="integrantes/alunoteste2.html">HTML Id</a> <br>
+                <a href wm-nav="integrantes/alunoteste3.html">HTML class</a> <br>
+                <a href wm-nav="integrantes/alunoteste5.html">HTML Forms</a> <br>
+                <a href wm-nav="integrantes/alunoteste6.html">HTML Form Elements</a> <br>
+                <a href wm-nav="integrantes/alunoteste7.html">CSS Introduction</a> <br>
+                <a href wm-nav="integrantes/alunoteste8.html">CSS Backgrounds</a> <br>
+                <a href wm-nav="integrantes/alunoteste9.html">CSS Borders</a> <br>
+                <a href wm-nav="integrantes/alunoteste9.html">CSS Margins</a> <br>
+                <a href wm-nav="integrantes/alunoteste9.html">CSS Padding</a> <br>
+                <a href wm-nav="integrantes/alunoteste9.html">CSS Fonts</a> <br>
+            </nav>
+        </div>
+        <div class="box sidebar2">Sidebar 2 - Imagem X</div>
+        <div class="box content" id="conteudo">Content - Imagem Y
+            <br /> Cor de funto Azul</div>
+        <div class="box footer">Footer - Imagem Z</div>
+    </div>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function (e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+
+</html>
